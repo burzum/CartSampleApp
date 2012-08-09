@@ -1,4 +1,4 @@
-/app/Config
+/app/Config/database.php
 /app/tmp
 /lib/Cake/Console/Templates/skel/tmp/
 /plugins
@@ -6,4 +6,6 @@
 /build
 /dist
 .DS_Store
+.settings
+.settings/*
 /tags
