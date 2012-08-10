@@ -2,23 +2,19 @@
 	<h2><?php echo __('Items'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('currency'); ?></th>
-			<th><?php echo $this->Paginator->sort('price'); ?></th>
-			<th><?php echo $this->Paginator->sort('downloadable'); ?></th>
-			<th><?php echo $this->Paginator->sort('quantity'); ?></th>
-			<th><?php echo $this->Paginator->sort('max_quantity'); ?></th>
-			<th><?php echo $this->Paginator->sort('min_quantity'); ?></th>
-			<th><?php echo $this->Paginator->sort('for_sale'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+		<th><?php echo $this->Paginator->sort('name'); ?></th>
+		<th><?php echo $this->Paginator->sort('currency'); ?></th>
+		<th><?php echo $this->Paginator->sort('price'); ?></th>
+		<th><?php echo $this->Paginator->sort('downloadable'); ?></th>
+		<th><?php echo $this->Paginator->sort('quantity'); ?></th>
+		<th><?php echo $this->Paginator->sort('max_quantity'); ?></th>
+		<th><?php echo $this->Paginator->sort('min_quantity'); ?></th>
+		<th><?php echo $this->Paginator->sort('for_sale'); ?></th>
+		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
 	foreach ($items as $item): ?>
 	<tr>
-		<td>
-			<?php echo $this->Html->link($item['User']['id'], array('controller' => 'users', 'action' => 'view', $item['User']['id'])); ?>
-		</td>
 		<td><?php echo h($item['Item']['name']); ?>&nbsp;</td>
 		<td><?php echo h($item['Item']['currency']); ?>&nbsp;</td>
 		<td><?php echo h($item['Item']['price']); ?>&nbsp;</td>

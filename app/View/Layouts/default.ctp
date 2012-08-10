@@ -10,6 +10,7 @@
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('app');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -21,6 +22,26 @@
 		<div id="header">
 			<h1>CakePHP Cart Plugin Sample App <small>http://github.com/burzum/Cart</small></h1>
 		</div>
+		<ul class="nav">
+			<li>
+				<?php
+					echo $this->Html->link(__('Items'), array(
+						'plugin' => null, 'controller' => 'items', 'action' => 'index'));
+				?>
+			</li>
+			<li>
+				<?php
+					echo $this->Html->link(__('Cart'), array(
+						'plugin' => 'cart', 'controller' => 'carts', 'action' => 'view'));
+				?>
+			</li>
+			<li>
+				<?php
+					echo $this->Html->link(__('Login'), array(
+						'plugin' => 'users', 'controller' => 'users', 'action' => 'login'));
+				?>
+			</li>
+		</ul>
 		<div id="content">
 
 			<?php echo $this->Session->flash(); ?>

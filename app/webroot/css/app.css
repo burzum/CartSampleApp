@@ -1,0 +1,8 @@
+.nav li {
+	display: inline-block;
+}
+.nav li a {
+	display: block;
+	background: #fff;
+	padding: 5px 10px;
+}

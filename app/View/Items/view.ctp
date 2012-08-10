@@ -56,16 +56,6 @@
 			<?php echo h($item['Item']['for_sale']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
-			<?php echo h($item['Item']['created']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
-			<?php echo h($item['Item']['modified']); ?>
-			&nbsp;
-		</dd>
 	</dl>
 </div>
 <div class="actions">
