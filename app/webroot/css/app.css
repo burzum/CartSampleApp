@@ -1,3 +1,6 @@
+h1 small {
+	display: block;
+}
 .nav li {
 	display: inline-block;
 }

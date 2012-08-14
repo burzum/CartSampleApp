@@ -20,7 +20,14 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1>CakePHP Cart Plugin Sample App <small>http://github.com/burzum/Cart</small></h1>
+			<h1>
+				<a href="http://github.com/burzum/Cart">
+					CakePHP Cart Plugin Sample App
+					<small>
+					http://github.com/burzum/Cart
+					</small>
+				</a>
+			</h1>
 		</div>
 		<ul class="nav">
 			<li>
@@ -31,7 +38,7 @@
 			</li>
 			<li>
 				<?php
-					echo $this->Html->link(__('Cart'), array(
+					echo $this->Html->link(__('Cart') . ' (' . $this->Cart->count() . ')', array(
 						'plugin' => 'cart', 'controller' => 'carts', 'action' => 'view'));
 				?>
 			</li>

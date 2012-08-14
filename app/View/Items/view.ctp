@@ -1,5 +1,6 @@
 <div class="items view">
 <h2><?php  echo __('Item'); ?></h2>
+	
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>

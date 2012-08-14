@@ -10,6 +10,8 @@
 		<th><?php echo $this->Paginator->sort('max_quantity'); ?></th>
 		<th><?php echo $this->Paginator->sort('min_quantity'); ?></th>
 		<th><?php echo $this->Paginator->sort('for_sale'); ?></th>
+		<th><?php __('Buy Link'); ?>
+		<th><?php __('Via Post'); ?>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
@@ -23,6 +25,15 @@
 		<td><?php echo h($item['Item']['max_quantity']); ?>&nbsp;</td>
 		<td><?php echo h($item['Item']['min_quantity']); ?>&nbsp;</td>
 		<td><?php echo h($item['Item']['for_sale']); ?>&nbsp;</td>
+		<td>
+			<?php
+				echo $this->Cart->link(__('buy me'), array(
+					'item' => $item['Item']['id']));
+			?>
+		</td>
+		<td>
+		
+		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $item['Item']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $item['Item']['id'])); ?>
