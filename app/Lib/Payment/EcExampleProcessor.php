@@ -1,5 +1,6 @@
 <?php
 App::uses('BasePaymentProcessor', 'Cart.Lib/Payment');
+App::uses('HttpSocket', 'Network/Http');
 /**
  * Ec Example Checkout Processor
  *
@@ -8,6 +9,13 @@ App::uses('BasePaymentProcessor', 'Cart.Lib/Payment');
  * @license MIT
  */
 class EcExampleProcessor extends BasePaymentProcessor implements ExpressCheckoutInterface {
+/**
+ * 
+ */
+	public function checkout(Controller $Controller, $cart) {
+		
+	}
+
 /**
  * 
  */
@@ -26,7 +34,7 @@ class EcExampleProcessor extends BasePaymentProcessor implements ExpressCheckout
  * 
  */
 	public function ecProcessPayment($cart, $options = array()) {
-		return true;
+		
 	}
 
 }

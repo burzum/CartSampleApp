@@ -36,6 +36,15 @@ class InitialMigration extends CakeMigration {
 							'PRIMARY' => array('column' => 'id', 'unique' => 1),
 					),
 				),
+				'ec_transactions' => array(
+					'id' => array('type' => 'string', 'null' => false, 'length' => 36, 'default' => NULL, 'key' => 'primary'),
+					'price' => array('type' => 'float', 'null' => false, 'default' => NULL),
+					'created' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
+					'modified' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
+					'indexes' => array(
+							'PRIMARY' => array('column' => 'id', 'unique' => 1),
+					),
+				),
 			),
 		),
 		'down' => array(
