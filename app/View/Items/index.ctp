@@ -1,5 +1,8 @@
 <div class="items index">
 	<h2><?php echo __('Items'); ?></h2>
+	<p>
+		The "buy me" link demonstrates buying something through a get request. The form next to it through a post. The buy link can also pass the quantity by quantity:number. When not passed its set to 1 by default.
+	</p>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 		<th><?php echo $this->Paginator->sort('name'); ?></th>
@@ -10,8 +13,8 @@
 		<th><?php echo $this->Paginator->sort('max_quantity'); ?></th>
 		<th><?php echo $this->Paginator->sort('min_quantity'); ?></th>
 		<th><?php echo $this->Paginator->sort('for_sale'); ?></th>
-		<th><?php __('Buy Link'); ?>
-		<th><?php __('Via Post'); ?>
+		<th><?php echo __('Via Get'); ?>
+		<th><?php echo __('Via Post'); ?>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
@@ -32,7 +35,20 @@
 			?>
 		</td>
 		<td>
-		
+			<?php
+				echo $this->Form->create();
+				echo $this->Form->input('quantity', array(
+					'label' => false,
+					'div' => false,
+					'style' => 'width: 50px;',
+					'default' => 1));
+				echo $this->Form->submit(__('buy'), array(
+					'div' => false));
+				echo $this->Form->hidden('foreign_key', array(
+					'value' => $item['Item']['id']));
+				echo $this->Form->hidden('model', array(
+					'value' => 'Item'));
+			?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $item['Item']['id'])); ?>

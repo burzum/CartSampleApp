@@ -58,6 +58,20 @@
 			&nbsp;
 		</dd>
 	</dl>
+	<?php
+		echo $this->Form->create();
+		echo $this->Form->input('quantity', array(
+			'label' => false,
+			'div' => false,
+			'style' => 'width: 50px;',
+			'default' => 1));
+		echo $this->Form->submit(__('buy'), array(
+			'div' => false));
+		echo $this->Form->hidden('foreign_key', array(
+			'value' => $item['Item']['id']));
+		echo $this->Form->hidden('model', array(
+			'value' => 'Item'));
+	?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

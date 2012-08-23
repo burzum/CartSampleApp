@@ -54,6 +54,11 @@ class AddingSampleData extends CakeMigration {
 		return true;
 	}
 
+/**
+ * Adding sample items to the application
+ *
+ * @return void
+ */
 	public function addSampleItems() {
 		$Item = ClassRegistry::init('Item');
 
@@ -99,6 +104,11 @@ class AddingSampleData extends CakeMigration {
 		}
 	}
 
+/**
+ * Adding sample users to the application
+ *
+ * @return void
+ */
 	public function addSampleUsers() {
 		$User = ClassRegistry::init('Users.User');
 
@@ -111,10 +121,26 @@ class AddingSampleData extends CakeMigration {
 				'active' => 1,
 				'email_verified' => 1,
 				'tos' => 1,
+				'role' => 'admin',
 				'password' => Security::hash('password', null, true),
 			array(
 				'validate' => false,
 				'callbacks' => false)));
+
+		$User->create();
+		$User->save(
+				array(
+					'id' => 'user-2',
+					'username' => 'customer',
+					'email' => 'customer@samplecart.com',
+					'active' => 1,
+					'email_verified' => 1,
+					'tos' => 1,
+					'role' => 'customer',
+					'password' => Security::hash('password', null, true),
+				array(
+					'validate' => false,
+					'callbacks' => false)));
 	}
 
 }

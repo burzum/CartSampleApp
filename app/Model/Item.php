@@ -3,6 +3,10 @@ App::uses('AppModel', 'Model');
 /**
  * Item Model
  *
+ * @author Florian Krämer
+ * @copyright 2012 Florian Krämer
+ * @license GPLv2
+ *
  * @property User $User
  */
 class Item extends AppModel {
@@ -36,5 +40,13 @@ class Item extends AppModel {
 			'order' => ''
 		)
 	);
+
+/**
+ * 
+ */
+	public function beforeAddToCart() {
+
+		//return false;
+	}
 
 }

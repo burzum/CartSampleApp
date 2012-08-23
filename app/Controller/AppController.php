@@ -49,4 +49,13 @@ class AppController extends Controller {
 	public $helpers = array(
 		'Cart.Cart');
 
+/**
+ * beforeFilter
+ *
+ * @return void
+ */
+	public function beforeFilter() {
+		$this->set('title_for_layout', __('Cart Sample Application'));
+	}
+
 }

@@ -3,6 +3,10 @@ App::uses('AppController', 'Controller');
 /**
  * Items Controller
  *
+ * @author Florian Krämer
+ * @copyright 2012 Florian Krämer
+ * @license GPLv2
+ *
  * @property Item $Item
  */
 class ItemsController extends AppController {
