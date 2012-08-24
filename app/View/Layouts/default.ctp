@@ -55,6 +55,7 @@
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
+			&copy; 2012 by Florian Krämer 
 			<?php echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt' => 'CakePHP', 'border' => '0')),
 					'http://www.cakephp.org/',

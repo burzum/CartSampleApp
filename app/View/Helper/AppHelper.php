@@ -31,4 +31,10 @@ App::uses('Helper', 'View');
  * @package       app.View.Helper
  */
 class AppHelper extends Helper {
+/**
+ * 
+ */
+	public function humanBool($bool) {
+		return $bool == 1 ? __('Yes') : __('No');
+	}
 }

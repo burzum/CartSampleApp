@@ -9,3 +9,5 @@
 .settings
 .settings/*
 /tags
+
+/.buildpath
