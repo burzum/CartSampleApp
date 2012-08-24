@@ -41,12 +41,4 @@ class Item extends AppModel {
 		)
 	);
 
-/**
- * 
- */
-	public function beforeAddToCart() {
-
-		//return false;
-	}
-
 }

@@ -6,7 +6,7 @@ App::uses('HttpSocket', 'Network/Http');
  *
  * @author Florian Krämer
  * @copyright 2012 Florian Krämer
- * @license MIT
+ * @license GPLv2
  */
 class EcExampleProcessor extends BasePaymentProcessor implements ExpressCheckoutInterface {
 /**

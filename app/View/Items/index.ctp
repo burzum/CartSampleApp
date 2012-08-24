@@ -36,7 +36,8 @@
 		</td>
 		<td>
 			<?php
-				echo $this->Form->create();
+				echo $this->Form->create('CartsItem', array(
+					'action' => 'buy'));
 				echo $this->Form->input('quantity', array(
 					'label' => false,
 					'div' => false,
