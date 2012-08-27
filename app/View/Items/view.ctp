@@ -1,12 +1,17 @@
 <div class="items view">
-<h2><?php  echo __('Item'); ?></h2>
-	
+<h2><?php echo __('Item') . ': ' . h($item['Item']['name']); ?></h2>
+	<p>
+		Check the displayed info for that item. An item that is not for sale 
+		can not be bought.
+	</p>
+	<p>
+		Also if the min and max quantity are not 0 the user can not add more or 
+		less items than specified by the min and max quantity to his cart.
+	</p>
+		The Item::isBuyable() method gets called by the Cart 
+		and is doing the checks.
+	</p>
 	<dl>
-		<dt><?php echo __('Name'); ?></dt>
-		<dd>
-			<?php echo h($item['Item']['name']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Description'); ?></dt>
 		<dd>
 			<?php echo h($item['Item']['description']); ?>
@@ -24,10 +29,10 @@
 		</dd>
 		<dt><?php echo __('Downloadable'); ?></dt>
 		<dd>
-			<?php echo h($item['Item']['downloadable']); ?>
+			<?php echo $this->Html->humanBool($item['Item']['downloadable']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Quantity'); ?></dt>
+		<dt><?php echo __('In Stock'); ?></dt>
 		<dd>
 			<?php echo h($item['Item']['quantity']); ?>
 			&nbsp;
@@ -44,7 +49,7 @@
 		</dd>
 		<dt><?php echo __('For Sale'); ?></dt>
 		<dd>
-			<?php echo h($item['Item']['for_sale']); ?>
+			<?php echo $this->Html->humanBool($item['Item']['for_sale']); ?>
 			&nbsp;
 		</dd>
 	</dl>

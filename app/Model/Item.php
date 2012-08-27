@@ -55,6 +55,10 @@ class Item extends AppModel {
 				$this->alias . '.' . $this->primaryKey => $data['CartsItem']['foreign_key'])));
 
 		if (!empty($result)) {
+			if ($result[$this->alias]['quantity'] == 0) {
+				return false;
+			}
+
 			if ($data['CartsItem']['quantity'] > $result[$this->alias]['quantity']) {
 				return false;
 			}
@@ -72,4 +76,5 @@ class Item extends AppModel {
 
 		return false;
 	}
+
 }
