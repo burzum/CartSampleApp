@@ -2,16 +2,6 @@
 <h2><?php  echo __('Item'); ?></h2>
 	
 	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($item['Item']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('User'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($item['User']['id'], array('controller' => 'users', 'action' => 'view', $item['User']['id'])); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Name'); ?></dt>
 		<dd>
 			<?php echo h($item['Item']['name']); ?>
@@ -59,7 +49,8 @@
 		</dd>
 	</dl>
 	<?php
-		echo $this->Form->create();
+		echo $this->Form->create('CartsItem', array(
+			'action' => 'buy'));
 		echo $this->Form->input('quantity', array(
 			'label' => false,
 			'div' => false,
