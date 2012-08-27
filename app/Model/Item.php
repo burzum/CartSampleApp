@@ -41,4 +41,22 @@ class Item extends AppModel {
 		)
 	);
 
+/**
+ * This method will determine if the item is buyable or not and by this can be added to the cart or not
+ *
+ * @param array $data
+ * @return boolean
+ */
+	public function isBuyable($data) {
+		$result = $this->find('first', array(
+			'contain' => array(),
+			'conditions' => array(
+				$this->alias . '.' . $this->primaryKey => $data['CartsItem']['foreign_key'])));
+
+		if (!empty($result)) {
+			return $result[$this->alias]['for_sale'] == 1 && $result[$this->alias]['for_sale'] > 0;
+		}
+
+		return false;
+	}
 }
