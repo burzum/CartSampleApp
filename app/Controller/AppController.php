@@ -38,6 +38,16 @@ class AppController extends Controller {
  * @var array
  */
 	public $components = array(
+		'Auth' => array(
+			'authenticate' => array(
+				'Form' => array(
+					'fields' => array(
+						'username' => 'email',
+						'password' => 'password'),
+					'userModel' => 'Users.User',
+					'scope' => array(
+						'User.active' => 1,
+						'User.email_verified' => 1)))),
 		'DebugKit.Toolbar',
 		'Cart.CartManager');
 
@@ -56,6 +66,30 @@ class AppController extends Controller {
  */
 	public function beforeFilter() {
 		$this->set('title_for_layout', __('Cart Sample Application'));
+		$this->_setupAuth();
+		$this->set('userData', $this->Auth->user());
+	}
+
+/**
+ * Setup Authentication Component
+ *
+ * @return void
+ */
+	protected function _setupAuth() {
+		if (!is_null(Configure::read('Users.allowRegistration')) && !Configure::read('Users.allowRegistration')) {
+			$this->Auth->deny('add');
+		}
+		if ($this->request->action == 'register') {
+			$this->Components->disable('Auth');
+		}
+
+		if ($this->request->action == 'login') {
+			$this->Auth->autoRedirect = false;
+		}
+
+		$this->Auth->loginRedirect = '/';
+		$this->Auth->logoutRedirect = array('plugin' => 'users', 'controller' => 'users', 'action' => 'login');
+		$this->Auth->loginAction = array('admin' => false, 'plugin' => 'users', 'controller' => 'users', 'action' => 'login');
 	}
 
 }

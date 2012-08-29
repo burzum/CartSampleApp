@@ -32,21 +32,48 @@
 			<li>
 				<?php
 					echo $this->Html->link(__('Items'), array(
-						'plugin' => null, 'controller' => 'items', 'action' => 'index'));
+						'admin' => false, 'plugin' => null, 'controller' => 'items', 'action' => 'index'));
 				?>
 			</li>
 			<li>
 				<?php
 					echo $this->Html->link(__('Cart') . ' (' . $this->Cart->count() . ')', array(
-						'plugin' => 'cart', 'controller' => 'carts', 'action' => 'view'));
+						'admin' => false, 'plugin' => 'cart', 'controller' => 'carts', 'action' => 'view'));
 				?>
 			</li>
-			<li>
-				<?php
-					echo $this->Html->link(__('Login'), array(
-						'plugin' => 'users', 'controller' => 'users', 'action' => 'login'));
-				?>
-			</li>
+			<?php if (empty($userData)) : ?>
+				<li>
+					<?php
+						echo $this->Html->link(__('Login'), array(
+							'admin' => false, 'plugin' => 'users', 'controller' => 'users', 'action' => 'login'));
+					?>
+				</li>
+			<?php else: ?>
+				<li>
+					<?php
+						echo $this->Html->link(__('Logout'), array(
+							'admin' => false, 'plugin' => 'users', 'controller' => 'users', 'action' => 'logout'));
+					?>
+				</li>
+			<?php endif; ?>
+
+			<?php if (isset($userData['role']) && $userData['role'] == 'admin') : ?>
+				<li>
+					Admin:
+				</li>
+				<li>
+					<?php
+						echo $this->Html->link(__('Orders'), array(
+							'plugin' => 'cart', 'controller' => 'orders', 'action' => 'index'));
+					?>
+				</li>
+				<li>
+					<?php
+						echo $this->Html->link(__('Carts'), array(
+							'plugin' => 'cart', 'controller' => 'carts', 'action' => 'index'));
+					?>
+				</li>
+			<?php endif; ?>
 		</ul>
 		<div id="content">
 
