@@ -16,3 +16,6 @@
 [submodule "app/Plugin/Utils"]
 	path = app/Plugin/Utils
 	url = git://github.com/CakeDC/utils.git
+[submodule "app/Plugin/Payments"]
+	path = app/Plugin/Payments
+	url = git://github.com/burzum/Payments.git

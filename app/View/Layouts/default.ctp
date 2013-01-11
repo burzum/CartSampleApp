@@ -64,13 +64,13 @@
 				<li>
 					<?php
 						echo $this->Html->link(__('Orders'), array(
-							'plugin' => 'cart', 'controller' => 'orders', 'action' => 'index'));
+							'admin' => true, 'plugin' => 'cart', 'controller' => 'orders', 'action' => 'index'));
 					?>
 				</li>
 				<li>
 					<?php
 						echo $this->Html->link(__('Carts'), array(
-							'plugin' => 'cart', 'controller' => 'carts', 'action' => 'index'));
+							'admin' => true, 'plugin' => 'cart', 'controller' => 'carts', 'action' => 'index'));
 					?>
 				</li>
 			<?php endif; ?>

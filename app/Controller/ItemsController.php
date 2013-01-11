@@ -10,6 +10,15 @@ App::uses('AppController', 'Controller');
  * @property Item $Item
  */
 class ItemsController extends AppController {
+/**
+ * beforeFilter callback
+ *
+ * @return void
+ */
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('*');
+	}
 
 /**
  * index method
@@ -34,6 +43,13 @@ class ItemsController extends AppController {
 			throw new NotFoundException(__('Invalid item'));
 		}
 		$this->set('item', $this->Item->read(null, $id));
+	}
+
+/**
+ * 
+ */
+	public function download() {
+		
 	}
 
 /**

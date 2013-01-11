@@ -4,9 +4,11 @@ This is a sample application for the CakePHP Cart plugin:
 
 http://github.com/burzum/Cart
 
-This sample application is thought to show how the cart plugin can be used and is not thought as an example of a shop application!
+This sample application is thought to show how the cart plugin can be used and is *not* thought as an example of a shop application!
 
 This is, same as the cart, still work in progress.
+
+The Cart plugin itself is MIT licensed, this sample app GPLv2 because it is thought for eductional use.
 
 ## Setup
 
@@ -33,7 +35,7 @@ There are two users you can login with:
 
 	Username: admin@samplecart.com
 	Password: password
-	
+
 and
 
 	Username: customer@samplecart.com
