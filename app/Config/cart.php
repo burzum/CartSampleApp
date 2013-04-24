@@ -2,11 +2,18 @@
 $config = array(
 	'Cart' => array(
 		'models' => array(
-			'User' => 'Users.User')),
+			'User' => 'Users.User'
+		),
 		'defaultCurrency' => 'USD',
 		'anonymousCheckout' => false,
 		'PaymentMethod' => array(
 			'DummyEc' => array(
 				'name' => 'Dummy Express Checkout',
-				'processor' => 'EcExample',
-				'logo' => '')));
+				'description' => 'Dummy Express Checkout description',
+				'class' => 'EcExample',
+				'logo' => '',
+				'active' => true,
+			)
+		)
+	)
+);
