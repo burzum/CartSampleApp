@@ -25,7 +25,7 @@ class EcExampleProcessor extends BasePaymentProcessor implements ExpressCheckout
  * Pay
  *
  * @param $amount
- * @param $options array
+ * @param array $options
  * @return void
  */
 	public function pay($amount, array $options = array()) {
@@ -36,8 +36,8 @@ class EcExampleProcessor extends BasePaymentProcessor implements ExpressCheckout
  *
  * @param $paymentReference
  * @param $amount
- * @param $comment string
- * @param $options array
+ * @param string $comment 
+ * @param array $options
  * @return void
  */
 	public function refund($paymentReference, $amount, $comment = '', array $options = array()) {
@@ -46,7 +46,7 @@ class EcExampleProcessor extends BasePaymentProcessor implements ExpressCheckout
 /**
  * notificationCallback
  *
- * @param $options array
+ * @param array $options 
  */
 	public function notificationCallback(array $options = array()) {
 	}
@@ -55,7 +55,7 @@ class EcExampleProcessor extends BasePaymentProcessor implements ExpressCheckout
  * Cancel
  *
  * @param $paymentReference
- * @param $options array
+ * @param array $options
  */
 	public function cancel($paymentReference, array $options = array()) {
 	}
@@ -64,7 +64,7 @@ class EcExampleProcessor extends BasePaymentProcessor implements ExpressCheckout
  * ecInitAndRedirect
  *
  * @param $cart
- * @param $options array
+ * @param array $options
  */
 	public function ecInitAndRedirect($cart, $options = array()) {
 		$this->redirect(array('plugin' => 'cart', 'admin' => false, 'controller' => 'dummy_controller', 'ec_checkout'));
@@ -74,7 +74,7 @@ class EcExampleProcessor extends BasePaymentProcessor implements ExpressCheckout
  * ecRetrieveInfo
  *
  * @param $cart
- * @param $options array
+ * @param array $options 
  */
 	public function ecRetrieveInfo($cart, $options = array()) {
 	}
@@ -83,7 +83,7 @@ class EcExampleProcessor extends BasePaymentProcessor implements ExpressCheckout
  * ecProcessPayment
  *
  * @param $cart
- * @param $options array
+ * @param array $options 
  */
 	public function ecProcessPayment($cart, $options = array()) {
 	}
