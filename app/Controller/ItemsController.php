@@ -4,12 +4,13 @@ App::uses('AppController', 'Controller');
  * Items Controller
  *
  * @author Florian Krämer
- * @copyright 2012 Florian Krämer
+ * @copyright 2014 Florian Krämer
  * @license GPLv2
  *
  * @property Item $Item
  */
 class ItemsController extends AppController {
+
 /**
  * beforeFilter callback
  *
@@ -33,8 +34,8 @@ class ItemsController extends AppController {
 /**
  * view method
  *
- * @throws NotFoundException
  * @param string $id
+ * @throws NotFoundException
  * @return void
  */
 	public function view($id = null) {
@@ -49,7 +50,6 @@ class ItemsController extends AppController {
  * 
  */
 	public function download() {
-		
 	}
 
 /**
